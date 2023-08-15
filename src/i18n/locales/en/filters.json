@@ -1,0 +1,24 @@
+{
+  "EDIT_FILTER": "Modifica filtro",
+  "FILTER_FIELD_LABEL": "Campo",
+  "FILTER_OPERATOR": {
+    "!=": "è diverso da",
+    "!ILIKE": "non contiene",
+    "!IN": "non è uno di",
+    "!LIKE": "non contiene",
+    "<": "è minore di",
+    "<=": "è minore o uguale a",
+    "=": "è uguale a",
+    ">": "è maggiore di",
+    ">=": "è maggiore o uguale a",
+    "ILIKE": "contiene",
+    "IN": "è uno di",
+    "LIKE": "contiene"
+  },
+  "FILTER_OPERATOR_LABEL": "Operatore",
+  "FILTER_VALUE": {
+    "FALSE": "falso",
+    "TRUE": "vero"
+  },
+  "NEW_FILTER": "Nuovo filtro"
+}

@@ -1,0 +1,55 @@
+.badge {
+  @apply inline-flex font-medium rounded-full text-center px-2.5 py-1 w-fit;
+
+  &--sm {
+    @apply text-xs;
+  }
+
+  &--md {
+    @apply text-sm;
+  }
+
+  &--primary {
+    @apply bg-indigo-100 text-indigo-600;
+  }
+  &--secondary {
+    @apply bg-light-blue-100 text-light-blue-600;
+  }
+  &--success {
+    @apply bg-green-100 text-green-600;
+  }
+  &--warning {
+    @apply bg-yellow-100 text-yellow-600;
+  }
+  &--danger {
+    @apply bg-red-100 text-red-600;
+  }
+  &--info {
+    @apply bg-blue-100 text-blue-600;
+  }
+  &--light {
+    @apply bg-gray-100 text-gray-600;
+  }
+  &--dark {
+    @apply bg-gray-800 text-gray-100;
+  }
+
+  &--primary-opaque {
+    @apply text-white bg-indigo-600;
+  }
+  &--secondary-opaque {
+    @apply text-white bg-light-blue-600;
+  }
+  &--success-opaque {
+    @apply text-white bg-green-600;
+  }
+  &--warning-opaque {
+    @apply text-white bg-amber-500;
+  }
+  &--danger-opaque {
+    @apply text-white bg-red-600;
+  }
+  &--info-opaque {
+    @apply text-white bg-blue-600;
+  }
+}

@@ -1,0 +1,75 @@
+name: Eslint & Build
+on:
+  pull_request:
+    types: [opened, synchronize, edited]
+  push:
+    branches: [main, master]
+
+jobs:
+  build:
+    timeout-minutes: 10
+    runs-on: [ubuntu-latest]
+    env:
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+    steps:
+      - name: Trigger condition
+        id: trigger-condition
+        # If the PR title starts with [WIP], the workflow will not trigger. If the PR is pushed to main or master, the workflow will trigger.
+        run: |
+          if [[ "${{ github.event_name }}" == "push" && ("${{ github.ref }}" == "refs/heads/master" || "${{ github.ref }}" == "refs/heads/main") ]]; then
+            echo "TRIGGER=true" >> $GITHUB_ENV
+          else
+            PR_TITLE="${{github.event.pull_request.title}}"
+
+            if [[ "${PR_TITLE,,}" != \[wip\]* ]]; then
+              echo "TRIGGER=true" >> $GITHUB_ENV
+            fi
+          fi
+
+      - uses: actions/checkout@v3
+        if: env.TRIGGER == 'true'
+
+      - name: Install cwebp
+        if: env.TRIGGER == 'true'
+        run: sudo apt-get update && sudo apt-get install -y webp
+
+      - uses: actions/setup-node@v3
+        if: env.TRIGGER == 'true'
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Set up SSH key
+        if: env.TRIGGER == 'true'
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
+      - name: Install npm
+        if: env.TRIGGER == 'true'
+        run: npm i -g npm@9
+
+      - name: Install dependencies
+        if: env.TRIGGER == 'true'
+        run: npm ci
+
+      - name: Eslint
+        if: env.TRIGGER == 'true'
+        run: |
+          npx eslint '**/*.{ts,tsx}' --ignore-pattern node_modules/ --ignore-pattern next-env.d.ts --ignore-pattern test/
+
+      - name: Create env file
+        if: env.TRIGGER == 'true'
+        run: |
+          echo "NEXT_PUBLIC_RECAPTCHA_KEY_V3=dummy" >> .env.local
+          echo "NEXT_PUBLIC_RECAPTCHA_KEY_V2=dummy" >> .env.local
+          echo "NEXT_PUBLIC_ENVIRONMENT=staging" >> .env.local
+
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        if: env.TRIGGER == 'true'
+
+      - name: Build
+        if: env.TRIGGER == 'true'
+        run: npm run build

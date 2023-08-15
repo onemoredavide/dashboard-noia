@@ -1,0 +1,88 @@
+@value badge from "./Badge.module.css";
+
+.table__wrapper {
+  @apply bg-white shadow-lg rounded-sm border border-gray-200 overflow-x-scroll;
+
+  & > header {
+    @apply flex items-center px-5 py-4 w-full;
+
+    h2 {
+      @apply font-semibold text-gray-800;
+    }
+  }
+}
+
+.table {
+  @apply overflow-x-auto overflow-y-hidden text-sm;
+
+  & > table {
+    @media only screen and (max-width: 768px) {
+      display: block;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      margin: 0 auto;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    @apply text-gray-600 w-full divide-y divide-gray-200;
+
+    thead {
+      @apply text-xs uppercase text-gray-500 bg-gray-50 border-t border-gray-200;
+
+      th {
+        @apply font-semibold text-left px-4 first:pl-5 last:pr-5 py-3 whitespace-nowrap;
+
+        &:not(:last-child) {
+          @apply border-r border-r-gray-200;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        @apply border-solid border-b border-b-gray-200 last:border-none h-[57px];
+
+        td {
+          @apply px-4 first:pl-5 last:pr-5 py-4 whitespace-nowrap;
+
+          &:not(:last-child) {
+            @apply border-r border-r-gray-200;
+          }
+
+          & > :global(.badge), img {
+            @apply -my-1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.table__selection {
+  width: calc(13px + 2.25rem);
+}
+
+.table__page-count {
+  @apply text-gray-400 font-medium ml-2;
+}
+
+.table__paginator {
+  @apply flex flex-row justify-between items-center py-3 text-gray-500;
+
+  & b {
+    @apply text-gray-800;
+  }
+}
+
+.table__sorter {
+  @apply flex flex-col right-0 -mr-1.5 -my-5;
+
+  svg {
+    @apply stroke-gray-500 fill-gray-500 stroke-1;
+  }
+}
+
+.table__sorter-down {
+  margin-top: -0.675rem;
+}

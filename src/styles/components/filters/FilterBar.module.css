@@ -1,0 +1,23 @@
+.filter-bar {
+  @apply mb-6 flex gap-3 items-stretch;
+}
+
+.filter-bar__search {
+  @apply min-w-60;
+}
+
+.filter-bar__items {
+  @apply flex flex-wrap items-stretch gap-3;
+
+  button {
+    @apply h-full;
+  }
+
+  .icon--plus {
+    @apply mr-1;
+  }
+}
+
+.filter-bar__tag {
+  @apply bg-white border px-3 border-gray-200 shadow-sm flex gap-1 items-center p-2 rounded text-sm;
+}

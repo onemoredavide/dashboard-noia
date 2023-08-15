@@ -1,0 +1,23 @@
+.filter-popover {
+  @apply bg-white text-sm shadow-lg border border-gray-200 flex flex-col gap-3 z-50 w-96 rounded-md p-4;
+}
+
+.filter-popover__title {
+  @apply font-semibold text-base flex;
+}
+
+.filter-popover__label {
+  @apply mb-2 uppercase text-xs font-semibold;
+}
+
+.filter-popover__footer {
+  @apply flex justify-end gap-3;
+}
+
+.filter-popover__toggle {
+  @apply p-0.5 rounded cursor-pointer hover:bg-gray-200 stroke-black;
+
+  &--active {
+    @apply hover:bg-indigo-500 bg-indigo-500 !stroke-white;
+  }
+}

@@ -1,0 +1,23 @@
+.pagination__wrapper {
+  @apply flex flex-col sm:flex-row sm:items-center sm:justify-between;
+
+  nav {
+    @apply mb-4 sm:mb-0 sm:order-1;
+
+    ul {
+      @apply flex justify-center;
+
+      button {
+        @apply disabled:bg-white ml-3 first:ml-0;
+      }
+    }
+  }
+}
+
+.pagination__label {
+  @apply text-sm text-gray-500 text-center sm:text-left;
+
+  span {
+    @apply font-medium text-gray-600;
+  }
+}

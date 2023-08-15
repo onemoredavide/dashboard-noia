@@ -1,0 +1,83 @@
+.input__wrapper {
+  @apply flex h-10 text-sm text-gray-800 leading-5 shadow-sm rounded;
+
+  & > * {
+    @apply bg-white h-full px-3 py-2 flex items-center border-gray-200;
+  }
+
+  &--readonly > * {
+    @apply bg-gray-50;
+  }
+
+  &--with-prefix .input {
+    @apply pl-0 border-l-0 rounded-l-none;
+  }
+
+  &--with-suffix .input {
+    @apply pr-0 border-r-0 rounded-r-none;
+  }
+
+  &--error > * {
+    @apply border-red-500;
+  }
+
+  &:not(&--error) {
+    &:hover > * {
+      @apply border-gray-300;
+    }
+
+    .input {
+      &:focus {
+        &, ~ .input__suffix, ~ .input__prefix {
+          @apply border-indigo-300;
+        }
+      }
+
+      &:disabled {
+        &, ~ .input__suffix, ~ .input__prefix {
+          @apply border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.input {
+  @apply flex-grow order-2 px-3 border rounded placeholder-gray-400 outline-none overflow-x-hidden text-ellipsis;
+}
+
+.input__prefix, .input__suffix {
+  @apply text-gray-400 font-medium;
+
+  svg {
+    @apply stroke-gray-400 stroke-2;
+  }
+}
+
+.input__prefix {
+  @apply order-1 border border-r-0 rounded-l;
+}
+
+.input__suffix {
+  @apply order-3 ml-auto border border-l-0 rounded-r;
+}
+
+.input__caption {
+  @apply text-xs mt-1;
+
+  &--error {
+    @apply text-red-500;
+  }
+}
+
+.input__label {
+  @apply block text-sm font-medium mb-1;
+
+  span {
+    @apply text-red-500;
+  }
+}
+
+.date-picker {
+  @apply pl-11 h-10 text-sm w-full cursor-pointer text-gray-500 hover:text-gray-600 font-medium hover:border-gray-300 focus:border-indigo-300;
+}

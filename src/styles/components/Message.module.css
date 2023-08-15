@@ -1,0 +1,46 @@
+.message {
+  @apply flex flex-col items-center text-center;
+}
+
+.message__icon {
+  @apply w-16 h-16 rounded-full flex justify-center items-center;
+
+  &--danger {
+    @apply bg-red-100;
+    svg {
+      @apply stroke-red-500;
+    }
+  }
+  &--generic {
+    @apply bg-gray-100;
+    svg {
+      @apply stroke-gray-500;
+    }
+  }
+  &--info {
+    @apply bg-indigo-100;
+    svg {
+      @apply stroke-indigo-500;
+    }
+  }
+  &--success {
+    @apply bg-green-100;
+    svg {
+      @apply stroke-green-500;
+    }
+  }
+  &--warning {
+    @apply bg-yellow-100;
+    svg {
+      @apply stroke-yellow-500;
+    }
+  }
+}
+
+.message__title {
+  @apply text-xl font-semibold mt-4;
+}
+
+.message__content {
+  @apply mt-2;
+}

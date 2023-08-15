@@ -1,0 +1,11 @@
+.recaptcha {
+  @apply text-xs text-grey-darker;
+
+  > a, > * > a {
+    @apply text-blue
+  }
+}
+
+.v2CheckBox {
+  @apply flex justify-center my-4
+}

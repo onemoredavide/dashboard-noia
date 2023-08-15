@@ -1,0 +1,87 @@
+.button {
+  @apply font-medium text-sm inline-flex items-center justify-center border border-transparent rounded leading-5 shadow-sm transition duration-150 ease-in-out outline-none;
+
+  &:disabled {
+    @apply border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed shadow-none;
+    svg {
+      @apply stroke-gray-400;
+    }
+  }
+
+  &.button--outline {
+    @apply bg-white text-black;
+  }
+
+  /* THEMES */
+
+  &.button--primary {
+    @apply enabled:bg-indigo-500 enabled:hover:bg-indigo-600 enabled:text-white;
+    &:enabled svg {
+      @apply stroke-white;
+    }
+  }
+
+  &.button--secondary {
+    @apply enabled:bg-white enabled:border-gray-200 enabled:hover:border-gray-300 enabled:text-indigo-500;
+    &:enabled svg {
+      @apply stroke-indigo-500;
+    }
+  }
+
+  &.button--tertiary {
+    @apply enabled:border-gray-200 enabled:hover:border-gray-300 enabled:text-gray-600;
+    &:enabled svg {
+      @apply stroke-gray-600;
+    }
+  }
+
+  &.button--danger {
+    @apply enabled:bg-red-500 enabled:hover:bg-red-600 enabled:text-white;
+    &:enabled svg {
+      @apply stroke-white;
+    }
+  }
+
+  &.button--outline-danger {
+    @apply enabled:border-gray-200 enabled:hover:border-gray-300 enabled:text-red-500;
+    &:enabled svg {
+      @apply stroke-red-500;
+    }
+  }
+
+  &.button--success {
+    @apply enabled:bg-green-500 enabled:hover:bg-green-600 enabled:text-white;
+    &:enabled svg {
+      @apply stroke-white;
+    }
+  }
+
+  &.button--outline-success {
+    @apply enabled:border-gray-200 enabled:hover:border-gray-300 enabled:text-green-500;
+    &:enabled svg {
+      @apply stroke-green-500;
+    }
+  }
+
+  /* SIZES */
+
+  &.button--xs {
+    @apply px-2 py-0.5;
+  }
+
+  &.button--sm {
+    @apply px-2 py-1;
+  }
+
+  &.button--md {
+    @apply px-3 py-2;
+  }
+
+  &.button--lg {
+    @apply px-4 py-3;
+  }
+
+  &.button--full {
+    @apply w-full px-0;
+  }
+}

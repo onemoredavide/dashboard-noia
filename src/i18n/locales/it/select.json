@@ -1,0 +1,8 @@
+{
+  "SELECT": {
+    "ALREADY_EXISTS": "{{inputValue}} è già stato aggiunto",
+    "FORMAT_CREATE_LABEL": "Premi <code>INVIO</code> per inserire <b>{{inputValue}}</b>",
+    "NO_OPTIONS_MESSAGE": "Inserisci i valori",
+    "PLACEHOLDER": "Seleziona..."
+  }
+}
