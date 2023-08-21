@@ -1,8 +1,8 @@
 .recaptcha {
-  @apply text-xs text-grey-darker;
+  @apply text-xs text-gray-600;
 
   > a, > * > a {
-    @apply text-blue
+    @apply text-blue-600
   }
 }
 

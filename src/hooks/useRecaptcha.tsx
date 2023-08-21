@@ -67,15 +67,18 @@ const useReCaptcha = (): UseReCaptcha => {
           throw new Error("Missing NEXT_PUBLIC_RECAPTCHA_KEY_V2 env variable")
         }
 
-        return <ReCAPTCHA
-          sitekey={reCaptchaKeyV2}
-          onChange={onChangeReCaptcha}
-          size={"normal"}
-          hl={lng}
-          onExpired={(): void => setReCaptchaToken(undefined)}
-          style={{ transform: "scale(1.1)" }}
-          className={"flex items-center justify-center mt-6"}
-        />
+        return <>
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+          <ReCAPTCHA
+            sitekey={reCaptchaKeyV2}
+            onChange={onChangeReCaptcha}
+            size={"normal"}
+            hl={lng}
+            onExpired={(): void => setReCaptchaToken(undefined)}
+            style={{ transform: "scale(1.1)" }}
+            className={"flex items-center justify-center mt-6"}
+          />
+        </>
       } else {
         return null
       }

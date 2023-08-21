@@ -2,7 +2,7 @@ import "server-only"
 
 import "$styles/globals.css"
 import { dir } from "i18next"
-import Navbar from "$components/server/Navbar"
+import Navbar from "$components/client/Navbar"
 import { FC, PropsWithChildren } from "react"
 import Footer from "$components/server/Footer"
 import Cookies from "$components/client/cookie/Cookies"

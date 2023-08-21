@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 
 const normalizePath = (path: string): string => path.endsWith("/") ? path : `${path}/`
-const isRouteActive = (pathname: string|null, translatedPath: string): boolean => !!pathname && normalizePath(pathname) === normalizePath(translatedPath)
+export const isRouteActive = (pathname: string|null, translatedPath: string): boolean => !!pathname && normalizePath(pathname) === normalizePath(translatedPath)
 
 export const useActiveRouteGroup = (childRoutes: RouteObject[]): boolean => {
   const pathname = usePathname()

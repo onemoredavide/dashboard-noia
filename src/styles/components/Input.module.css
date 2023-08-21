@@ -1,5 +1,5 @@
 .input__wrapper {
-  @apply flex h-10 text-sm text-gray-800 leading-5 shadow-sm rounded;
+  @apply flex h-12 text-sm text-gray-800 leading-5 rounded-md;
 
   & > * {
     @apply bg-white h-full px-3 py-2 flex items-center border-gray-200;
@@ -43,7 +43,7 @@
 }
 
 .input {
-  @apply flex-grow order-2 px-3 border rounded placeholder-gray-400 outline-none overflow-x-hidden text-ellipsis;
+  @apply flex-grow order-2 px-3 border rounded-md placeholder-gray-400 outline-none overflow-x-hidden text-ellipsis;
 }
 
 .input__prefix, .input__suffix {

@@ -1,18 +1,23 @@
 import "server-only"
 
-import GoogleButton from "$components/client/auth/GoogleButton"
 import { generateI18nStaticParams } from "$i18n/helpers"
 import { GenerateMetadata, ServerPage } from "$types/next"
 import { getPath } from "$helpers/routes"
 import { generateAlternates, mergeMetadata } from "$helpers/metadata"
 
+import LoginForm from "$components/client/LoginForm"
+import AuthBanner from "$components/client/AuthBanner"
+import { getServerTranslations } from "$i18n/server"
+
 export const generateStaticParams = generateI18nStaticParams("/login")
 
-const Login: ServerPage = async() => {
+const Login: ServerPage = async({ params }) => {
+  const { t } = await getServerTranslations(params.lng, ["login", "common"])
+
   return (
-    <div className="container my-4">
-      <GoogleButton />
-    </div>
+    <AuthBanner title={t("WELCOME")}>
+      <LoginForm />
+    </AuthBanner>
   )
 }
 

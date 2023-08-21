@@ -46,6 +46,9 @@
       ],
       "$i18n/*": [
         "src/i18n/*"
+      ],
+      "$sdk": [
+        "sdk/index.ts"
       ]
     },
     "plugins": [

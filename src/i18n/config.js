@@ -15,9 +15,13 @@ module.exports = {
       en: "/login",
       it: "/accedi"
     },
-    "/demo/listing": {
-      en: "/demo/listing",
-      it: "/demo/listing"
+    "/signup": {
+      en: "/signup",
+      it: "/registrati"
+    },
+    "/confirmEmail": {
+      en: "/confirmEmail",
+      it: "/verificaEmail"
     }
   }
 }

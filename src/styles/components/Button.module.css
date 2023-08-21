@@ -1,5 +1,5 @@
 .button {
-  @apply font-medium text-sm inline-flex items-center justify-center border border-transparent rounded leading-5 shadow-sm transition duration-150 ease-in-out outline-none;
+  @apply font-medium text-sm inline-flex items-center justify-center border border-transparent rounded-md leading-5 transition duration-150 ease-in-out outline-none;
 
   &:disabled {
     @apply border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed shadow-none;
@@ -15,10 +15,15 @@
   /* THEMES */
 
   &.button--primary {
-    @apply enabled:bg-indigo-500 enabled:hover:bg-indigo-600 enabled:text-white;
+    @apply enabled:hover:bg-indigo-700 enabled:text-white;
     &:enabled svg {
       @apply stroke-white;
     }
+    background-color: #53c6ec;
+  }
+
+  &.button--primary:enabled:hover {
+    background-color: #4fb9dd;
   }
 
   &.button--secondary {

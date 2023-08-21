@@ -1,0 +1,7 @@
+.form {
+
+}
+
+.loadingErrorContainer {
+  @apply text-red-600
+}

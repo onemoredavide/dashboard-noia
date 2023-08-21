@@ -13,6 +13,7 @@ export type IconName =
 	| "chevron-right"
 	| "eye-off"
 	| "letters-case"
+	| "logo"
 	| "plus"
 	| "search"
 	| "x"

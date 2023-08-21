@@ -1,0 +1,7 @@
+.form {
+  @apply w-full
+}
+
+.signupCta {
+  @apply text-xs text-gray-700 flex items-center justify-start gap-x-1
+}

@@ -14,8 +14,10 @@ export type Namespace =
 	| "login"
 	| "pagination"
 	| "select"
+	| "signup"
 
 export type Route =
 	|  "/"
 	| "/login"
-	| "/demo/listing"
+	| "/signup"
+	| "/confirmEmail"

@@ -2,5 +2,13 @@
   "META": {
     "DESCRIPTION": "Login - Template per progetti in Next.js",
     "TITLE": "SF Next template - Login"
-  }
+  },
+  "WELCOME": "Welcome",
+  "SUBMIT": "Login",
+  "WRONG_CREDENTIALS": "Wrong credentials",
+  "EMAIL_NOT_VALID": "Invalid email",
+  "PASSWORD_REQUIRED": "Password required",
+  "EMAIL_REQUIRED": "Email required",
+  "SIGNUP_DESC": "Don't have an account?",
+  "SIGNUP_CTA": "Register now"
 }
